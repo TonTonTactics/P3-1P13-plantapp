@@ -12,6 +12,8 @@ from . import models
 
 app = FastAPI()
 
+# RUN python -m Hub.app (from outside of Hub folder)
+
 @app.on_event("startup")
 def on_startup():
     db.create_db_and_table()     # lets us use python -m Hub.app without side effects from importing
