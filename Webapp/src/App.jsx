@@ -9,6 +9,8 @@ import Game from "./Game.jsx";
 import Dashboard from "./Dashboard.jsx";
 import Guidebook from "./Guidebook.jsx";
 
+// RUN npm run dev (from inside Webapp folder, needs access to package.json)
+
 export default function App() {
   return (
     <BrowserRouter>
