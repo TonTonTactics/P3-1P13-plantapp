@@ -1,28 +1,52 @@
-"""
+""" Table functions
+
+Gives the ability to add to, take from, or delete from a table
 
 Antony Wiegand, McMaster, 2026"""
 
-from sqlmodel import Session, select, delete, or_, col
+from sqlmodel import Session, select, delete
 from datetime import date
 
 from . import models
 from . import db
 
 def create_sensors(sensor: models.CreateSensor):
+    """
+    Input: JSON file (alternative table format)
+    1. Opens (and closes once done) a task session
+    2. Converts JSON file into main table format (adds id-key & timestamp)
+    3. Adds data to the table
+    4. Saves and refreshes \n
+    Output: None
+    """
     with Session(db.engine) as session:
         sensor_db = models.Sensor(**sensor.model_dump())
         session.add(sensor_db)
         session.commit()
         session.refresh(sensor_db)
 
-def select_sensors(date: date):           # DATE MUST BE date(YYYY,MM,DD)
+def select_sensors(date: date):
+    """
+    Input: Date (YYYY,MM,DD)
+    1. Opens (and closes once done) a task session
+    2. Finds and selects all sensor data from given date
+    3. Saves and refreshes \n
+    Output: Sensor data from given date
+    """
     with Session(db.engine) as session:
         statement = select(models.Sensor).where(models.Sensor.timestamp == date)
         results = session.exec(statement)
         sensors = results.all()
         return sensors
 
-def delete_sensors(date: date):           # DATE MUST BE date(YYYY,MM,DD)
+def delete_sensors(date: date):
+    """
+    Input: Date (YYYY,MM,DD)
+    1. Opens (and closes once done) a task session
+    2. Finds and deletes all sensor data from given date
+    3. Saves and refreshes \n
+    Output: None
+    """
     with Session(db.engine) as session:
         statement = delete(models.Sensor).where(models.Sensor.timestamp <= date) # <--CHECK IF THIS ACTUALLY WORKS
         session.exec(statement)
