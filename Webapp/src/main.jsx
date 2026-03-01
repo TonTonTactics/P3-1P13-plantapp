@@ -1,6 +1,6 @@
-{/* DO NOT CHANGE ANYTHING PLEASEEEEEEEE
+/* DO NOT CHANGE ANYTHING PLEASEEEEEEEE
 
-Antony Wiegand, Mcmaster, 2026*/}
+Antony Wiegand, Mcmaster, 2026*/
 
 import React from "react";
 import { createRoot } from 'react-dom/client';
