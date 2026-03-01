@@ -1,3 +1,8 @@
+/* Receives sensor data
+
+
+Antony Wiegand, Mcmaster, 2026*/
+
 import { useEffect, useState } from "react";
 
 export function GetSensors() {

@@ -1,3 +1,7 @@
+/* Tic-Tac-Toe Game
+
+Antony Wiegand, Mcmaster, 2026*/
+
 import { useState } from 'react';
 import { GoStart } from './Routes.jsx';
 
