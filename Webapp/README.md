@@ -1,16 +1,58 @@
-# React + Vite
+# The Webapp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+The Webapp is a frontend built with React and Vite that interacts
+with the Hub backend API to display data.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Requirements
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Make sure Node.js is installed --> [here](https://nodejs.org/en/download/)
 
-## Expanding the ESLint configuration
+To install required dependencies, run the following command in your terminal:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+cd webapp
+npm install
+```
+
+## Structure
+
+```
+src/
+│
+├── App.jsx          # Main React app component
+├── Dashboard.jsx    # Dashboard UI
+├── Fetch.jsx        # Fetching data from the Hub API
+├── Game.jsx         # Tic-Tac-Toe game component (mini-game)
+├── Guidebook.jsx    # Guidebook UI component
+├── index.css        # Global CSS styles
+├── main.jsx         # Entry point
+├── Routes.jsx       # Defines app routing and page navigation
+├── Setup.jsx        # Setup UI component
+├── Start.jsx        # landing page of the app
+└── styles.css       # Component-specific styles
+```
+
+## How to Run
+For Development (must be in Webapp folder):
+```bash
+npm run dev
+```
+
+For Production:
+```bash
+npm run build     # Builds optimized production files
+npm run preview   # Serves the production build locally for testing
+```
+
+[After running, visit: http://localhost:5173](http://localhost:5173)
+
+## Resources
+
+For more information, please check out the following documents:
+- [React](https://react.dev/learn)
+- [Routes](https://www.w3schools.com/react/react_router.asp)
+- [JSX](https://www.w3schools.com/react/react_jsx.asp)
+- [Node.js](https://nodejs.org/docs/latest/api/)
