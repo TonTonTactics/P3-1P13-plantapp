@@ -57,3 +57,4 @@ For more information, please check out the following documents:
 - [JSX](https://www.w3schools.com/react/react_jsx.asp)
 - [Node.js](https://nodejs.org/docs/latest/api/)
 - [fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#making_a_request)
+- [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)

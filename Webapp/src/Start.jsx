@@ -20,7 +20,7 @@ export default function Start() {
       <GoSetup />
       <GoGame />
       <CreditBox />
-      <Volume />
+      <Mute />
       <Accessability />
       <Settings />
     </>
@@ -51,22 +51,22 @@ function CreditBox() {
   );
 }
 
-function Volume() {
-  const [on, setOn] = useState(false);
+function Mute() {
+  const stored = localStorage.getItem("mute") === "true";
+  const [on, setOn] = useState(stored);
 
-  function Mute() {
-    setOn(!on);
+  function toggleMute() {
+    const newValue = !on
 
-    if (!on) {
-      console.log("(TEST) Mute: On")
-    } else {
-      console.log("(TEST) Mute: Off")
-    }
+    setOn(newValue);
+    localStorage.setItem("mute",newValue);
+    console.log("(Saved) mute: ",newValue);
+    
   }
 
   return(
     <>
-      <div onClick ={()=> setOn(Mute)}>
+      <div onClick ={toggleMute}>
         {on ? "Unmute":"Mute"}
       </div>
     </>
@@ -74,17 +74,17 @@ function Volume() {
 }
 
 function Accessability() {
+  const stored = (setting) => localStorage.getItem(setting) === "true";
   const [open, setOpen] = useState(false);
-  const [on, setOn] = useState(false);
+  const [s1on,setS1on] = useState(stored("setting1"))
 
-  function ExampleSetting() {
-    setOn(!on);
+  function toggleSetting1(setting) {
+    const newValue = !s1on
 
-    if (!on) {
-      console.log("(TEST) Setting: On")
-    } else {
-      console.log("(TEST) Setting: Off")
-    }
+    setS1on(newValue);
+    localStorage.setItem(setting,newValue);
+    console.log("(Saved)",setting,newValue);
+    
   }
 
   return(
@@ -98,7 +98,7 @@ function Accessability() {
         <div onClick={()=> setOpen(false)}>
           close
         </div>
-        <p onClick={()=> setOn (ExampleSetting)}> Setting: {on ? "On":"Off"}</p>
+        <p onClick={()=>toggleSetting1("setting1")}> Setting 1: {s1on ? "On":"Off"}</p>
       </div>
     )}
     </>
@@ -106,17 +106,17 @@ function Accessability() {
 }
 
 function Settings() {
+  const stored = (setting) => localStorage.getItem(setting) === "true";
   const [open, setOpen] = useState(false);
-  const [on, setOn] = useState(false);
+  const [s2on,setS2on] = useState(stored("setting2"))
 
-  function ExampleSetting() {
-    setOn(!on);
+  function toggleSetting2(setting) {
+    const newValue = !s2on
 
-    if (!on) {
-      console.log("(TEST) Setting: On")
-    } else {
-      console.log("(TEST) Setting: Off")
-    }
+    setS2on(newValue);
+    localStorage.setItem(setting,newValue);
+    console.log("(Saved)",setting,newValue);
+    
   }
 
   return(
@@ -130,7 +130,7 @@ function Settings() {
         <div onClick={()=> setOpen(false)}>
           close
         </div>
-        <p onClick={()=> setOn (ExampleSetting)}> Setting: {on ? "On":"Off"}</p>
+        <p onClick={()=>toggleSetting2("setting2")}> Setting 2: {s2on ? "On":"Off"}</p>
       </div>
     )}
     </>
