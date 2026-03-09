@@ -24,11 +24,16 @@ export default function Dashboard() {
 }
 
 function Slot1() {
+  const stored = localStorage.getItem("connected1") === "true";
   const [open, setOpen] = useState(false);
-  const [connected, setConnected] = useState(false);
+  const [connected, setConnected] = useState(stored);
 
   function Connection() {
-    return true
+    const newValue = !connected
+
+    setConnected(newValue);
+    localStorage.setItem("connected1",newValue);
+    console.log("(Saved) connected1: ",newValue);
   }
 
   return (
@@ -44,7 +49,7 @@ function Slot1() {
           </div>
           <div>
             <div>Slot Status: {connected ? "(CLOSED)":"(OPEN)"}</div>
-            <div onClick={()=> setConnected(false)}>{connected ? "Remove Plant":""}</div>
+            <div onClick={()=> setConnected(Connection)}>{connected ? "Remove Plant":""}</div>
             <div>{connected ? <GetSensors sensor_id={"1"}/>:""}</div>
           </div>
           <div onClick={()=> setConnected(Connection)}>
