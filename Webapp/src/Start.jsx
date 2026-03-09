@@ -22,6 +22,7 @@ export default function Start() {
       <CreditBox />
       <Volume />
       <Accessability />
+      <Settings />
     </>
   );
 }
@@ -76,7 +77,7 @@ function Accessability() {
   const [open, setOpen] = useState(false);
   const [on, setOn] = useState(false);
 
-  function Setting() {
+  function ExampleSetting() {
     setOn(!on);
 
     if (!on) {
@@ -97,7 +98,39 @@ function Accessability() {
         <div onClick={()=> setOpen(false)}>
           close
         </div>
-        <p onClick={()=> setOn (Setting)}> Setting: {on ? "On":"Off"}</p>
+        <p onClick={()=> setOn (ExampleSetting)}> Setting: {on ? "On":"Off"}</p>
+      </div>
+    )}
+    </>
+  );
+}
+
+function Settings() {
+  const [open, setOpen] = useState(false);
+  const [on, setOn] = useState(false);
+
+  function ExampleSetting() {
+    setOn(!on);
+
+    if (!on) {
+      console.log("(TEST) Setting: On")
+    } else {
+      console.log("(TEST) Setting: Off")
+    }
+  }
+
+  return(
+    <>
+    <div onClick ={()=> setOpen(true)}>
+      Settings
+    </div>
+
+    {open && (
+      <div>
+        <div onClick={()=> setOpen(false)}>
+          close
+        </div>
+        <p onClick={()=> setOn (ExampleSetting)}> Setting: {on ? "On":"Off"}</p>
       </div>
     )}
     </>
