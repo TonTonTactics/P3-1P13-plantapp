@@ -9,6 +9,10 @@ from sqlmodel import SQLModel, create_engine
 # REQURED DO NOT DELETE
 from . import models
 
+#/home/yusufeldar/P3-1P13-plantapp/Hub/database.db
+#/Users/user/Desktop/P3-1P13-plantapp/P3-1P13-plantapp/Hub/database.db
+
+
 #name and location of database
 sqlite_file_name = "/home/yusufeldar/P3-1P13-plantapp/Hub/database.db"
 sqlite_url = f"sqlite:///{sqlite_file_name}"

@@ -7,6 +7,7 @@ Antony Wiegand, McMaster, 2026"""
 from fastapi import FastAPI
 from datetime import date
 import uvicorn
+from fastapi.middleware.cors import CORSMiddleware
 
 from . import db
 from . import relations
@@ -16,6 +17,14 @@ from . import process
 app = FastAPI()
 
 # RUN python -m Hub.app (from outside of Hub folder)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:8000", "http://127.0.0.1:8000", "http://0.0.0.0:8000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.on_event("startup")
 def on_startup():
@@ -55,4 +64,6 @@ def delete_sensors(date: date):
 
 # allows for running python -m Hub:app
 if __name__ == "__main__":
-    uvicorn.run("Hub.app:app", reload= True)
+    uvicorn.run("Hub.app:app", host="0.0.0.0", port=8000, reload=True)
+
+# uvicorn Hub.app:app --host 0.0.0.0 --port 8000 --reload
