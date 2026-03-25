@@ -2,7 +2,7 @@
 
 Antony Wiegand, Mcmaster, 2026*/}
 
-import { GoSetup, GoGame } from "./Routes.jsx"
+import { GoGame, GoDashboard } from "./Routes.jsx"
 import { useState } from "react";
 
 
@@ -14,10 +14,12 @@ export default function Start() {
     Output: None
     */
 
+
+
   return (
     <>
       <h1>START</h1>
-      <GoSetup />
+      <GoDashboard />
       <GoGame />
       <CreditBox />
       <Mute />

@@ -51,7 +51,18 @@ def get_sensors(date: date, sensor_id: str):
     1. Connects (grab data from date) function with .get event "/sensors/" \n
     Output: data from date
     """
-    return process.rating(sensor_id, relations.select_sensors(date, sensor_id))
+    try:
+        m=process.rating(sensor_id, relations.select_sensors(date, sensor_id))
+    except TypeError:
+        n = [{
+            "sensor_id": sensor_id,
+            "water_next": "No Data",
+            "temperature_rating": "No Data",
+            "humidity_rating": "No Data"
+            }]
+        return n
+        
+    return m
 
 @app.get("/sensors/{id}")
 def get_sensors(id: int):

@@ -4,10 +4,26 @@ Process data into words.
 
 Antony Wiegand, McMaster, 2026"""
 
+from statistics import median, StatisticsError
+
 def rating(sensor_id, selected_data):
-    m = selected_data["moisture"]
-    t = selected_data["temperature"]
-    h = selected_data["humidity"]
+
+    m_list = selected_data.get("moisture", [])
+    t_list = selected_data.get("temperature", [])
+    h_list = selected_data.get("humidity", [])
+
+    try:
+        m = median(m_list)
+        t = median(t_list)
+        h = median(h_list)
+    except StatisticsError:
+        return [{
+            "sensor_id": sensor_id,
+            "water_next": None,
+            "temperature_rating": None,
+            "humidity_rating": None
+        }]
+
 
     if m <= 1:
         water = "2 days"
