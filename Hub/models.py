@@ -40,9 +40,17 @@ class CreateSensor(SQLModel):
     humidity: float
 
 class Guide(SQLModel, table=True):
-    """
-    IN PROGESS
-    """
+    
     id: int | None = Field(default=None, primary_key=True)
+    name : str | None = None
+    tips: str | None = None
+    opt_temperature_low: float | None = None
+    opt_temperature_high: float | None = None
+    opt_humidity_low: float | None = None
+    opt_humidity_high: float | None = None
+    opt_moisture_low: float | None = None
+    opt_moisture_high: float | None = None
 
-# do we neex indexes? its just adding = Field(index=True)
+
+
+# do we need indexes? its just adding = Field(index=True)
