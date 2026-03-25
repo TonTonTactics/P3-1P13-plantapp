@@ -6,7 +6,7 @@ Antony Wiegand, McMaster, 2026"""
 
 from sqlmodel import Session, select, delete
 from datetime import date
-from statistics import median
+from statistics import median, StatisticsError
 
 from . import models
 from . import db
@@ -36,17 +36,31 @@ def select_sensors(date: date, sensor_id: str):
     Output: Median sensor data from given date and sensor_id.
     """
     with Session(db.engine) as session:
-        statement = select(models.Sensor).where((models.Sensor.timestamp.like(f"{date}%")) & (models.Sensor.sensor_id == sensor_id))
-        results = session.exec(statement)
-        sensors = results.all()
+        statement = select(models.Sensor).where(
+            (models.Sensor.timestamp.like(f"{date}%")) &
+            (models.Sensor.sensor_id == sensor_id)
+        )
+        sensors = session.exec(statement).all()
 
         m = [r.moisture for r in sensors]
         t = [r.temperature for r in sensors]
         h = [r.humidity for r in sensors]
 
-        median_m = median(m)
-        median_t = median(t)
-        median_h = median(h)
+        # compute median safely
+        try:
+            median_m = median(m)
+        except StatisticsError:
+            median_m = None
+
+        try:
+            median_t = median(t)
+        except StatisticsError:
+            median_t = None
+
+        try:
+            median_h = median(h)
+        except StatisticsError:
+            median_h = None
 
         return {
             "moisture": median_m,
