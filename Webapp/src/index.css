@@ -41,3 +41,116 @@ body {
     opacity: 1;
   }
 }
+
+.godashboardstart {
+  position: absolute;
+
+  top: 40%;
+  left: 50%;
+  width: 575px;
+  transform: translate(-50%, -50%);
+}
+.godashboardstart:active {
+  content: url("clickable/clicked/CLICKEDgodashboard.png")
+}
+
+.gogame {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  width: 110px;
+  transform: translate(-50%, -50%);
+}
+.gogame:active {
+  content: url("clickable/clicked/CLICKEDgogame.png")
+}
+
+.gostartdashboard {
+  position: absolute;
+  top: 33.4%;
+  left: 33.4%;
+  height: 242px;
+  transform: translate(-50%, -50%);
+}
+.gostartdashboard:active {
+  content: url("clickable/clicked/CLICKEDgostartbanner.png")
+}
+
+.goguide {
+  position: absolute;
+  top: 33.4%;
+  left: 66.7%;
+  height: 242px;
+  transform: translate(-50%, -50%);
+}
+.goguide:active {
+  content: url("clickable/clicked/CLICKEDgoguide.png")
+}
+
+.godashboardguide {
+  position: absolute;
+  top: 70%;
+  left: 25%;
+  height: 125px;
+  transform: translate(-50%, -50%);
+}
+.godashboardguide:active {
+  content: url("clickable/clicked/CLICKEDhome.png")
+}
+
+.left {
+  position: absolute;
+  top: 70%;
+  left: 35%;
+  height: 125px;
+  transform: translate(-50%, -50%);
+}
+.left:active {
+  content: url("clickable/clicked/CLICKEDleft.png")
+}
+
+.right {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  height: 125px;
+  transform: translate(-50%, -50%);
+}
+.right:active {
+  content: url("clickable/clicked/CLICKEDright.png")
+}
+
+.GuideText {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  font-size: 30px;
+  transform: translate(-50%, -50%);
+}
+
+.gostartgame {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+}
+.gostartgame:active {
+  content: url("clickable/clicked/CLICKEDgostartdirt.png")
+}
+
+
+.reset {
+  position: absolute;
+  top: 85%;
+  left: 72%;
+  width: 300px;
+  transform: translate(-50%, -50%);
+}
+.reset:active {
+  content: url("clickable/clicked/CLICKEDreset.png")
+}
+
+
+
+

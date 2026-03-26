@@ -2,7 +2,7 @@
 
 Antony Wiegand, Mcmaster, 2026*/
 
-import { GoDashboard } from "./Routes.jsx";
+import { GoDashboardguide } from "./Routes.jsx";
 import { GetGuidebook } from "./Fetch.jsx";
 import { useState } from "react";
 import "./Guidebook.css";
@@ -52,14 +52,13 @@ export default function GuideBook() {
    }
 
     return (
+        <div className="page">
         <div className={"fade-in-on-load"}>
-            <div className="page">
             <img className="guidebook" src="guidebook.png" alt="background" />
-            <h1>GUIDEBOOK</h1>
-            <div>{items[index]}</div>
-            <GoDashboard go={handleNavigate}/>
-            <div onClick ={back} disabled ={index === 0}>Back</div>
-            <div onClick ={next} disabled ={index === items.length -1}>Next</div>
+            <div className="GuideText">{items[index]}</div>
+            <GoDashboardguide go={handleNavigate}/>
+            <img className="left" src="clickable/notclick/left.png" onClick ={back} disabled ={index === 0}></img>
+            <img className="right" src="clickable/notclick/right.png" onClick ={next} disabled ={index === items.length -1}></img>
             <div className={`screen-transition ${transitioning ? "active" : ""} ${flare ? "flare" : ""}`}/>
             </div>
         </div>

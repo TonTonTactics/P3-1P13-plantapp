@@ -2,7 +2,7 @@
 
 Antony Wiegand, Mcmaster, 2026*/}
 
-import { GoGame, GoDashboard } from "./Routes.jsx"
+import { GoGame, GoDashboardstart } from "./Routes.jsx"
 import { useState, useEffect } from "react";
 import "./Start.css";
 import "./index.css"
@@ -43,25 +43,18 @@ export default function Start() {
   }
 
   return (
-    <div className="page">
-      <div className={"fade-in-on-load"}>
-      <img className="bg-gif" src={bg} alt="background" />
+      <div className="page">
+        <div className={"fade-in-on-load"}>
+          <img className="bg-gif" src={bg} alt="background" />
+          <GoDashboardstart go={handleNavigate} />
+          <GoGame go={handleNavigate} />
+          <CreditBox />
+          <Mute />
+          <Accessability />
+          <Settings />
 
-      <h1>START</h1>
-
-      {/* pass navigation function */}
-      <GoDashboard go={handleNavigate} />
-      <GoGame go={handleNavigate} />
-
-      <CreditBox />
-      <Mute />
-      <Accessability />
-      <Settings />
-
-      {/* 🔥 overlay */}
-      <div className={`screen-transition ${transitioning ? "active" : ""} ${flare ? "flare" : ""}`}/>
+        <div className={`screen-transition ${transitioning ? "active" : ""} ${flare ? "flare" : ""}`}/></div>
       </div>
-    </div>
   );
 }
 

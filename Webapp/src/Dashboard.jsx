@@ -1,7 +1,7 @@
 /* All components on the dashboard page
 
 Antony Wiegand, Mcmaster, 2026*/
-import { GoStart,GoGuidebook } from "./Routes.jsx";
+import { GoStartdashboard,GoGuidebook } from "./Routes.jsx";
 import { GetSensors } from "./Fetch.jsx"
 import { useState } from "react";
 import "./Dashboard.css"
@@ -32,11 +32,10 @@ export default function Dashboard() {
     setTimeout(() => {navigate(path);}, 1500);}
 
   return (
+    <div className="page">
     <div className={"fade-in-on-load"}>
-      <div className="page">
       <img className="dashboard" src="dashboard.png" alt="background" />
-      <h1>DASHBOARD</h1>
-      <GoStart go={handleNavigate}/>
+      <GoStartdashboard go={handleNavigate}/>
       <GoGuidebook go={handleNavigate}/>
       <Slot1 />
       <div className={`screen-transition ${transitioning ? "active" : ""} ${flare ? "flare" : ""}`}/>
