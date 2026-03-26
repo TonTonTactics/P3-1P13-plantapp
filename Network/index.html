@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub Setup</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="icon" type="image/png" href="images/setup.png"/>
+    <link rel="stylesheet" href="style.css"/>
 </head>
 
 <body>
-    <main>
-        <h1>Hub Setup</h1>
+    <img class="bg" src="images/dashboard.png" alt="background" />
+    <div class="overlay"></div>
+    <img class="box" src="images/squarebox.png" alt="box"/>
+    <main class="content">
 
-        <div id="setup-form">
+        <div class="text" id="setup-form">
             <div id="wifisecurityDiv">
-                <label for="security">Security</label>
+                <label for="security">Security --- </label>
                 <select id="security" required>
                     <option value="none">None</option>
                     <option value="leap">LEAP</option>
@@ -25,29 +28,29 @@
             </div>
 
             <div id="networknameDiv">
-                <label for="networkname">WiFi Name</label>
+                <label for="networkname">WiFi Name --- </label>
                 <input id="networkname" type="text" required>
             </div>
 
             <div id="leapDiv" style="display: none;">
                 <div>
-                    <label for="leapusername">LEAP Username</label>
+                    <label for="leapusername">LEAP Username --- </label>
                     <input id="leapusername" type="text">
                 </div>
 
                 <div>
-                    <label for="leappassword">LEAP Password</label>
+                    <label for="leappassword">LEAP Password --- </label>
                     <input id="leappassword" type="password">
                 </div>
             </div>
 
             <div id="wpa2personalDiv" style="display: none;">
-                <label for="wpapersonalpassword">Password</label>
+                <label for="wpapersonalpassword">Password --- </label>
                 <input id="wpapersonalpassword" type="password">
             </div>
 
             <div id="wpa2enterpriseDiv" style="display: none;">
-                <label for="authentication">Authentication</label>
+                <label for="authentication">Authentication --- </label>
                 <select id="authentication">
                     <option value="tls">TLS</option>
                     <option value="leap">LEAP</option>
@@ -60,83 +63,83 @@
 
             <div id="tlsauthDiv" style="display: none;">
                 <div>
-                    <label for="tlsidentity">TLS Identity</label>
+                    <label for="tlsidentity">TLS Identity --- </label>
                     <input id="tlsidentity" type="text">
                 </div>
 
                 <div>
-                    <label for="tlsdomain">Domain</label>
+                    <label for="tlsdomain">Domain --- </label>
                     <input id="tlsdomain" type="text">
                 </div>
 
                 <div>
-                    <label for="tlscacert">CA Certificate</label>
+                    <label for="tlscacert">CA Certificat --- </label>
                     <input id="tlscacert" type="file">
                 </div>
 
                 <div>
-                    <label for="tlscacertpassword">CA Certificate Password</label>
+                    <label for="tlscacertpassword">CA Certificate Password --- </label>
                     <input id="tlscacertpassword" type="password">
                 </div>
 
                 <div>
+                    <label for="tlsnocacert">No CA Certificate --- </label>
                     <input id="tlsnocacert" type="checkbox">
-                    <label for="tlsnocacert">No CA Certificate</label>
                 </div>
 
                 <div>
-                    <label for="tlsusercert">User Certificate</label>
+                    <label for="tlsusercert">User Certificate --- </label>
                     <input id="tlsusercert" type="file">
                 </div>
 
                 <div>
-                    <label for="tlsusercertpassword">User Certificate Password</label>
+                    <label for="tlsusercertpassword">User Certificate Password --- </label>
                     <input id="tlsusercertpassword" type="password">
                 </div>
 
                 <div>
-                    <label for="tlsuserprivatekey">User Private Key</label>
+                    <label for="tlsuserprivatekey">User Private Key --- </label>
                     <input id="tlsuserprivatekey" type="file">
                 </div>
 
                 <div>
-                    <label for="tlsuserprivatekeypassword">User Private Key Password</label>
+                    <label for="tlsuserprivatekeypassword">User Private Key Password --- </label>
                     <input id="tlsuserprivatekeypassword" type="password">
                 </div>
             </div>
 
             <div id="leapauthDiv" style="display: none;">
                 <div>
-                    <label for="leapauthusername">LEAP Username</label>
+                    <label for="leapauthusername">LEAP Username --- </label>
                     <input id="leapauthusername" type="text">
                 </div>
 
                 <div>
-                    <label for="leapauthpassword">LEAP Password</label>
+                    <label for="leapauthpassword">LEAP Password --- </label>
                     <input id="leapauthpassword" type="password">
                 </div>
             </div>
 
             <div id="pwdDiv" style="display: none;">
                 <div>
-                    <label for="pwdusername">PWD Username</label>
+                    <label for="pwdusername">PWD Username --- </label>
                     <input id="pwdusername" type="text">
                 </div>
 
                 <div>
-                    <label for="pwdpassword">PWD Password</label>
+                    <label for="pwdpassword">PWD Password --- </label>
                     <input id="pwdpassword" type="password">
                 </div>
             </div>
 
             <div id="fastDiv" style="display: none;">
                 <div>
-                    <label for="anonymousidentity">Anonymous Identity</label>
+                    <label for="anonymousidentity">Anonymous Identity --- </label>
                     <input id="anonymousidentity" type="text">
                 </div>
 
                 <div>
-                    <label for="pacprovisioning">PAC Provisioning</label>
+                    <label for="pacprovisioning">PAC Provisioning --- </label>
                     <select id="pacprovisioning">
                         <option value="Anonymous">Anonymous</option>
                         <option value="Authenticated">Authenticated</option>
@@ -145,12 +148,12 @@
                 </div>
 
                 <div>
-                    <label for="pacfile">PAC File</label>
+                    <label for="pacfile">PAC File --- </label>
                     <input id="pacfile" type="file">
                 </div>
 
                 <div>
-                    <label for="innerauth">Inner Auth</label>
+                    <label for="innerauth">Inner Auth --- </label>
                     <select id="innerauth">
                         <option value="gtc">GTC</option>
                         <option value="mschapv2">MSCHAPv2</option>
@@ -158,44 +161,44 @@
                 </div>
 
                 <div>
-                    <label for="fastusername">Username</label>
+                    <label for="fastusername">Username --- </label>
                     <input id="fastusername" type="text">
                 </div>
 
                 <div>
-                    <label for="fastpassword">Password</label>
+                    <label for="fastpassword">Password --- </label>
                     <input id="fastpassword" type="password">
                 </div>
             </div>
 
             <div id="ttlsauthDiv" style="display: none;">
                 <div>
-                    <label for="ttlsanonymousidentity">Anonymous Identity</label>
+                    <label for="ttlsanonymousidentity">Anonymous Identity --- </label>
                     <input id="ttlsanonymousidentity" type="text">
                 </div>
 
                 <div>
-                    <label for="ttlsdomain">Domain</label>
+                    <label for="ttlsdomain">Domain --- </label>
                     <input id="ttlsdomain" type="text">
                 </div>
 
                 <div>
-                    <label for="ttlscacert">CA Certificate</label>
+                    <label for="ttlscacert">CA Certificate --- </label>
                     <input id="ttlscacert" type="file">
                 </div>
 
                 <div>
-                    <label for="ttlscacertpassword">CA Certificate Password</label>
+                    <label for="ttlscacertpassword">CA Certificate Password --- </label>
                     <input id="ttlscacertpassword" type="password">
                 </div>
 
                 <div>
+                    <label for="ttlsnocacert">No CA Certificate --- </label>
                     <input id="ttlsnocacert" type="checkbox">
-                    <label for="ttlsnocacert">No CA Certificate</label>
                 </div>
 
                 <div>
-                    <label for="ttlsinnerauth">Inner Auth</label>
+                    <label for="ttlsinnerauth">Inner Auth --- </label>
                     <select id="ttlsinnerauth">
                         <option value="pap">PAP</option>
                         <option value="mschap">MSCHAP</option>
@@ -208,44 +211,44 @@
                 </div>
 
                 <div>
-                    <label for="ttlsusername">Username</label>
+                    <label for="ttlsusername">Username --- </label>
                     <input id="ttlsusername" type="text">
                 </div>
 
                 <div>
-                    <label for="ttlspassword">Password</label>
+                    <label for="ttlspassword">Password --- </label>
                     <input id="ttlspassword" type="password">
                 </div>
             </div>
 
             <div id="peapDiv" style="display: none;">
                 <div>
-                    <label for="peapanonymousidentity">Anonymous Identity</label>
+                    <label for="peapanonymousidentity">Anonymous Identity --- </label>
                     <input id="peapanonymousidentity" type="text">
                 </div>
 
                 <div>
-                    <label for="peapdomain">Domain</label>
+                    <label for="peapdomain">Domain --- </label>
                     <input id="peapdomain" type="text">
                 </div>
 
                 <div>
-                    <label for="peapcacert">CA Certificate</label>
+                    <label for="peapcacert">CA Certificate --- </label>
                     <input id="peapcacert" type="file">
                 </div>
 
                 <div>
-                    <label for="peapcacertpassword">CA Certificate Password</label>
+                    <label for="peapcacertpassword">CA Certificate Password --- </label>
                     <input id="peapcacertpassword" type="password">
                 </div>
 
                 <div>
+                    <label for="peapnocacert">No CA Certificate --- </label>
                     <input id="peapnocacert" type="checkbox">
-                    <label for="peapnocacert">No CA Certificate</label>
                 </div>
 
                 <div>
-                    <label for="peapinnerauth">Inner Auth</label>
+                    <label for="peapinnerauth">Inner Auth --- </label>
                     <select id="peapinnerauth">
                         <option value="mschapv2">MSCHAPv2</option>
                         <option value="md5">MD5</option>
@@ -254,18 +257,18 @@
                 </div>
 
                 <div>
-                    <label for="peapusername">Username</label>
+                    <label for="peapusername">Username --- </label>
                     <input id="peapusername" type="text">
                 </div>
 
                 <div>
-                    <label for="peappassword">Password</label>
+                    <label for="peappassword">Password --- </label>
                     <input id="peappassword" type="password">
                 </div>
             </div>
 
             <div id="wpa3personalDiv" style="display: none;">
-                <label for="wpa3password">Password</label>
+                <label for="wpa3password">Password --- </label>
                 <input id="wpa3password" type="password">
             </div>
 
@@ -273,7 +276,7 @@
                 <button type="button" id="connectBtn">Connect</button>
             </div>
 
-            <div>
+            <div class="status">
                 <p id="status"></p>
             </div>
         </div>
