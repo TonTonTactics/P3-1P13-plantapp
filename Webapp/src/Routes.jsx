@@ -6,41 +6,32 @@ Antony Wiegand, Mcmaster, 2026*/
 
 import { useNavigate } from "react-router-dom";
 
-export function GoStart () {
+export function GoStart ( { go }) {
     /*
     Input: None
     1. creates navigate variable using useNavigate function.
     Output: When clicked, takes you to start.
     */
-    const navigate = useNavigate();
     return (
-        <div className="gostart" onClick={() => navigate("/")}>Start</div>
+    <button onClick={() => go("/dashboard")}>
+      Dashboard
+    </button>
   );
 }
 
-export function GoSetup () {
-    /*
-    Input: None
-    1. creates navigate variable using useNavigate function.
-    Output: When clicked, takes you to setup.
-    */
-    const navigate = useNavigate();
-    return (
-        <div className="gosetup" onClick={() => navigate("/setup")}>Setup</div>
-  );
-}
-
-export function GoGame () {
+export function GoGame ( { go } ) {
     /*
     Input: None
     1. creates navigate variable using useNavigate function.
     Output: When clicked, takes you to game.
     */
-    const navigate = useNavigate();
     return (
-        <div className="gogame" onClick={() => navigate("/game")}>Game</div>
+    <button onClick={() => go("/game")}>
+      Game
+    </button>
   );
 }
+
 
 export function GoDashboard () {
     /*
