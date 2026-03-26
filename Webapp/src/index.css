@@ -1,5 +1,10 @@
 body {
   background: black;
+  font-family: "MedodicaRegular";
+}
+
+pre {
+  font-family: "MedodicaRegular";
 }
 
 /* full screen overlay */
@@ -10,6 +15,11 @@ body {
   opacity: 0;
   pointer-events: none;
   z-index: 9999;
+}
+
+@font-face {
+  font-family: "MedodicaRegular";
+  src: url(fonts/MedodicaRegular.otf);
 }
 
 /* fade in */
