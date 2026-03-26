@@ -3,7 +3,7 @@
 Antony Wiegand, Mcmaster, 2026*/
 
 import { useState } from 'react';
-import { GoStart } from './Routes.jsx';
+import { GoStartgame } from './Routes.jsx';
 import "./Game.css"
 import "./index.css"
 import { useNavigate } from "react-router-dom";
@@ -84,7 +84,6 @@ export default function Game() {
         <div className="page">
             <div className={"fade-in-on-load"}>
             <img className="game" src="game.png" alt="background" />
-            <h1>GAME</h1>
             <div className="status">{status}</div>
 
             <div className="board-row">
@@ -102,8 +101,8 @@ export default function Game() {
                 <Square value={squares[7]} onSquareClick={() => handleClick(7)} />
                 <Square value={squares[8]} onSquareClick={() => handleClick(8)} />
             </div>
-            <button onClick={handleRestart} > Restart </button>
-            <GoStart go= {handleNavigate} />
+            <img className="reset" src="clickable/notclick/reset.png" onClick={handleRestart} />
+            <GoStartgame go= {handleNavigate} />
             <div className={`screen-transition ${transitioning ? "active" : ""} ${flare ? "flare" : ""}`}/>
             </div>
         </div>

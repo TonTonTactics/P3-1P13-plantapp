@@ -4,16 +4,32 @@ when clicked, routes you to their connected function.
 
 Antony Wiegand, Mcmaster, 2026*/
 
-export function GoStart ( { go }) {
+import "./index.css"
+
+export function GoStartgame ( { go }) {
     /*
     Input: None
     1. creates navigate variable using useNavigate function.
     Output: When clicked, takes you to start.
     */
     return (
-    <div onClick={() => go("/")}>
-      Start
-    </div>
+    <img
+    className="gostartgame"
+    src="clickable/notclick/gostartdirt.png"
+    onClick={() => go("/")}/>
+  );
+}
+export function GoStartdashboard ( { go }) {
+    /*
+    Input: None
+    1. creates navigate variable using useNavigate function.
+    Output: When clicked, takes you to start.
+    */
+    return (
+    <img
+    className="gostartdashboard"
+    src="clickable/notclick/gostartbanner.png"
+    onClick={() => go("/")}/>
   );
 }
 
@@ -24,23 +40,44 @@ export function GoGame ( { go } ) {
     Output: When clicked, takes you to game.
     */
     return (
-    <div onClick={() => go("/game")}>
-      Game
-    </div>
+    <img
+    className="gogame"
+    src="clickable/notclick/gogame.png"
+    onClick={() => go("/game")}/>
   );
 }
 
 
-export function GoDashboard ( { go } ) {
+export function GoDashboardstart ( { go } ) {
     /*
     Input: None
     1. creates navigate variable using useNavigate function.
     Output: When clicked, takes you to dashboard.
     */
     return (
-        <div className="godashboard" onClick={() => go("/dashboard")}>Dashboard</div>
+        <img
+        className="godashboardstart"
+        src="clickable/notclick/godashboard.png"
+        onClick={() => go("/dashboard")}
+        />
   );
 }
+
+export function GoDashboardguide ( { go } ) {
+    /*
+    Input: None
+    1. creates navigate variable using useNavigate function.
+    Output: When clicked, takes you to dashboard.
+    */
+    return (
+        <img
+        className="godashboardguide"
+        src="clickable/notclick/home.png"
+        onClick={() => go("/dashboard")}
+        />
+  );
+}
+
 
 export function GoGuidebook ( { go } ) {
     /*
@@ -49,7 +86,10 @@ export function GoGuidebook ( { go } ) {
     Output: When clicked, takes you to guidebook.
     */
     return (
-        <div className="goguidebook" onClick={() => go("/guidebook")}>Guidebook</div>
+            <img
+    className="goguide"
+    src="clickable/notclick/goguide.png"
+    onClick={() => go("/guidebook")}/>
   );
 }
 
