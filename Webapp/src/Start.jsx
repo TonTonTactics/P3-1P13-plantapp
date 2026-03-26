@@ -5,37 +5,64 @@ Antony Wiegand, Mcmaster, 2026*/}
 import { GoGame, GoDashboard } from "./Routes.jsx"
 import { useState, useEffect } from "react";
 import "./Start.css";
-
+import "./index.css"
+import { useNavigate } from "react-router-dom";
 
 export default function Start() {
-  /*
-    Input: None
-    1. Title: Start
-    2. routes: setup, game
-    Output: None
-    */
-  
   const [bg, setBg] = useState("/intro.gif");
+  const [transitioning, setTransitioning] = useState(false);
+  const [flare, setFlare] = useState(false);
+
+  const navigate = useNavigate();
+
   useEffect(() => {
     const preloadLoop = new Image();
     preloadLoop.src = "/loop.gif";
+
     const timer = setTimeout(() => {
       setBg("/loop.gif");
-    }, 4000); // change this to your intro gif length in ms
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
 
+  function handleNavigate(path) {
+    if (transitioning) return;
+
+    setTransitioning(true);
+
+    // flare after 1 second
+    setTimeout(() => {
+      setFlare(true);
+    }, 1000);
+
+    // navigate after animation
+    setTimeout(() => {
+      navigate(path);
+    }, 1500);
+  }
+
   return (
-    <div className={`page`}>
+    <div className="page">
       <img className="bg-gif" src={bg} alt="background" />
+
       <h1>START</h1>
-      <GoDashboard />
-      <GoGame />
+
+      {/* pass navigation function */}
+      <GoDashboard go={handleNavigate} />
+      <GoGame go={handleNavigate} />
+
       <CreditBox />
       <Mute />
       <Accessability />
       <Settings />
+
+      {/* 🔥 overlay */}
+      <div
+        className={`screen-transition ${
+          transitioning ? "active" : ""
+        } ${flare ? "flare" : ""}`}
+      />
     </div>
   );
 }

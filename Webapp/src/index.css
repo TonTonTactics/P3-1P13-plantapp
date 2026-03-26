@@ -1,2 +1,39 @@
+/* full screen overlay */
+.screen-transition {
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
 
+/* fade in */
+.screen-transition.active {
+  animation: fadeToBlack 1s ease forwards;
+}
 
+/* flare effect */
+.screen-transition.flare {
+  animation: flareOut 0.5s ease forwards;
+}
+
+@keyframes fadeToBlack {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flareOut {
+  from {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  to {
+    opacity: 1;
+    filter: brightness(4);
+  }
+}
