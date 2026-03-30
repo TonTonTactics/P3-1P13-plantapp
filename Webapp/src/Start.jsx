@@ -81,21 +81,15 @@ function CreditBox() {
   );
 }
 
-function Mute() {
-  const stored = localStorage.getItem("mute") === "true";
-  const [on, setOn] = useState(stored);
-
+function Mute( muted, setMuted ) {
   function toggleMute() {
-    const newValue = !on
-
-    setOn(newValue);
+    const newValue =!muted;
+    setMuted(newValue);
     localStorage.setItem("mute",newValue);
-    console.log("(Saved) mute: ",newValue);
-    
   }
 
   return(
-    <img className="volume" onClick ={toggleMute} src={on ? "clickable/notclick/volume.png":"clickable/clicked/CLICKEDvolume.png"}/>
+    <img className="volume" onClick ={toggleMute} src={muted ? "clickable/notclick/volume.png" : "clickable/clicked/CLICKEDvolume.png"}/>
   );
 }
 

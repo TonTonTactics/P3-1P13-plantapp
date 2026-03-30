@@ -66,7 +66,7 @@ function Slot1() {
 
   return (
     <>
-      <img
+        <img
         className="slot1"
         src="clickable/notclick/slotclosed.png"
         onClick={() => setOpen(true)}
@@ -120,7 +120,7 @@ function PlantSelect({ plant, setPlant }) {
   const [plants, setPlants] = useState([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/guidebook")
+    fetch("http://192.168.4.1:8000/guidebook")
       .then(res => res.json())
       .then(data => setPlants(data))
       .catch(() => setPlants([]));
