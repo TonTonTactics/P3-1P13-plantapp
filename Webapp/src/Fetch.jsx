@@ -94,24 +94,3 @@ export function GetPlants( {id } ) {
   );
 }
 
-export function Plant_url( {id} ) {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    fetch(`http://192.168.4.1:8000/guidebook/${id}`)
-      .then(res => res.json())
-      .then(data => setData(data))
-      .catch(() => setError(true));
-  }, [id]);
-
-  if (error) return <div>Error loading data</div>;
-  if (!data) return <div>Loading...</div>;
-
-  return (
-    <div>
-      <img className="GuideImage" src={data.image_url}/>
-    </div>
-  );
-}
-
