@@ -173,7 +173,7 @@ select {
 
 .reset {
   position: absolute;
-  top: 83%;
+  top: 83.2%;
   left: 67%;
   width: 75px;
   transform: translate(-50%, -50%);
@@ -223,14 +223,23 @@ select {
 
 .next-player {
   position: absolute;
-  top: 83%;
-  left: 60%;
+  top: 71%;
+  left: 87%;
   width: 100px;
   transform: translate(-50%, -50%);
   image-rendering: pixelated;
 }
 
 .next-img {
+  position: absolute;
+  top: 83%;
+  left: 50%;
+  width: 75px;
+  transform: translate(-50%, -50%);
+  image-rendering: pixelated;
+}
+
+.status {
   position: absolute;
   top: 83%;
   left: 50%;
@@ -271,7 +280,7 @@ select {
 
 .creditsclose {
   position: absolute;
-  top: 170px;
+  top: 190px;
   left: 315px;
   width: 50px;
   z-index: 2;
@@ -322,7 +331,7 @@ select {
 
 .accessabilityclose {
   position: absolute;
-  top: 170px;
+  top: 190px;
   left: 315px;
   width: 50px;
   z-index: 2;
@@ -356,7 +365,7 @@ select {
 
 .settingsclose {
   position: absolute;
-  top: 170px;
+  top: 190px;
   left: 315px;
   width: 50px;
   z-index: 2;
@@ -397,14 +406,14 @@ select {
 .slottext {
   position: absolute;
   z-index: 3;
-  top: 200px;
+  top: 225px;
   left: 325px;
   font-size: 30px;
 }
 
 .slotclose {
   position: absolute;
-  top: 170px;
+  top: 190px;
   left: 315px;
   width: 50px;
   z-index: 2;

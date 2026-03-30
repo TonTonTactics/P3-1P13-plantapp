@@ -13,7 +13,7 @@ export function GetSensors({ sensor_id, plant_type }) {
 
     const today = new Date().toISOString().split("T")[0];
 
-    fetch(`http://127.0.0.1:8000/sensors/?date=${today}&sensor_id=${sensor_id}&plant_type=${plant_type}`)
+    fetch(`http://192.168.4.1:8000/sensors/?date=${today}&sensor_id=${sensor_id}&plant_type=${plant_type}`)
       .then(response => response.json())
       .then(data => setData(data))
       .catch(() => setData([]));
@@ -45,7 +45,7 @@ export function GetGuidebook({ id }) {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/guidebook/${id}`)
+    fetch(`http://192.168.4.1:8000/guidebook/${id}`)
       .then(res => res.json())
       .then(data => setData(data))
       .catch(() => setError(true));
@@ -67,12 +67,12 @@ export function GetGuidebook({ id }) {
   );
 }
 
-export function GetPlants( {id }) {
+export function GetPlants( {id } ) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/guidebook/${id}`)
+    fetch(`http://192.168.4.1:8000/guidebook/${id}`)
       .then(res => res.json())
       .then(data => setData(data))
       .catch(() => setError(true));
@@ -93,3 +93,4 @@ export function GetPlants( {id }) {
     </div>
   );
 }
+
