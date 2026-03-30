@@ -18,9 +18,9 @@ def validate_sensor_data(sensors):
     h = [r.humidity for r in sensors]
 
     try:
-        median_m = median(m)
+        m_value = m[-1]
     except StatisticsError:
-        median_m = None
+        m_value = None
 
     try:
         tempdeltas = []
@@ -51,7 +51,7 @@ def validate_sensor_data(sensors):
         validated_h = None
 
     return {
-        "moisture": median_m,
+        "moisture": m_value,
         "temperature": validated_t,
         "humidity": validated_h
     }
